@@ -1,0 +1,18 @@
+/**
+Creates a smooth shadow.
+
+Generates 3 shadow layers. The spread-factor controls how distributed the shadows are.
+
+@param {Color} --color - Shadow color.
+@param {Length} --size - Shadow size.
+@param {Number} --spread-factor - Controls shadow distribution (higher = tighter shadows).
+@returns {Shadow} Layered box shadow.
+@example box-shadow: --smooth-shadow(black, 20px, 3);
+*/
+@function --smooth-shadow(--color: rgb(0 0 0 / 0.2), --size: 12px, --spread-factor: 3) {
+	--step: calc(var(--size) / var(--spread-factor));
+	result:
+		0 var(--step) calc(var(--step) * 2) rgb(from var(--color) r g b / 0.25),
+		0 calc(var(--step) * 2) calc(var(--step) * 3) rgb(from var(--color) r g b / 0.18),
+		0 calc(var(--step) * 3) calc(var(--step) * 4) rgb(from var(--color) r g b / 0.12);
+}
