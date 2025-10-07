@@ -1,0 +1,13 @@
+/**
+Darkens a color by mixing with black.
+
+Uses OKLAB color space for perceptually uniform mixing.
+
+@param {Color} --color - The base color.
+@param {Number} --amount - Amount to darken (0-100%).
+@returns {Color} Darkened color.
+@example background: --shade(blue, 20%);
+*/
+@function --shade(--color, --amount: 10%) {
+	result: color-mix(in oklab, var(--color), black var(--amount));
+}
