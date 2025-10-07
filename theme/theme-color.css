@@ -1,0 +1,19 @@
+/**
+Creates a theme-aware color with automatic adjustment.
+
+Uses CSS `if()` with color-scheme query. Requires `color-scheme: light dark` on `:root`.
+
+In light mode, mixes the base color with white (default 85% white).
+In dark mode, mixes the base color with black (default 15% black).
+
+@param {Color} --base - Base color.
+@param {Number} --light-mix - Percentage of white to mix in light mode.
+@param {Number} --dark-mix - Percentage of black to mix in dark mode.
+@returns {Color} Theme-adjusted color.
+@example background: --theme-color(blue, 80%, 20%);
+*/
+@function --theme-color(--base, --light-mix: 85%, --dark-mix: 15%) {
+	--light-result: color-mix(in oklab, white var(--light-mix), var(--base));
+	--dark-result: color-mix(in oklab, black var(--dark-mix), var(--base));
+	result: if(color-scheme(dark): var(--dark-result); else: var(--light-result));
+}
