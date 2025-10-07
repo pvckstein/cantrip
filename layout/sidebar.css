@@ -1,0 +1,11 @@
+/**
+Creates responsive sidebar layout columns.
+
+@param {Length} --sidebar-width - Width of sidebar.
+@param {Length} --content-min - Minimum width of content area.
+@returns {Length} Grid template columns value.
+@example grid-template-columns: --sidebar-layout(250px, 20ch);
+*/
+@function --sidebar-layout(--sidebar-width: 20ch, --content-min: 20ch) {
+	result: minmax(var(--sidebar-width), 1fr) minmax(var(--content-min), 3fr);
+}
