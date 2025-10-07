@@ -1,0 +1,13 @@
+/**
+Lightens a color by mixing with white.
+
+Uses OKLAB color space for perceptually uniform mixing.
+
+@param {Color} --color - The base color.
+@param {Number} --amount - Amount to lighten (0-100%).
+@returns {Color} Lightened color.
+@example background: --tint(blue, 20%);
+*/
+@function --tint(--color, --amount: 10%) {
+	result: color-mix(in oklab, var(--color), white var(--amount));
+}
