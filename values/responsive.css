@@ -1,0 +1,17 @@
+/**
+Creates a responsive value that scales between two sizes.
+
+NOTE: This function is mathematically equivalent to `--fluid-type()` but uses a simpler lerp-based approach. Use this for spacing/sizing, `--fluid-type()`for typography.
+
+@param {Length} --small - Minimum value.
+@param {Length} --large - Maximum value.
+@param {Length} --viewport-min - Minimum viewport width.
+@param {Length} --viewport-max - Maximum viewport width.
+@returns {Length} Responsive value.
+@example padding: --responsive-value(1rem, 2rem, 320px, 1200px);
+*/
+@function --responsive-value(--small, --large, --viewport-min: 320px, --viewport-max: 1200px) {
+	--progress: calc((100vw - var(--viewport-min)) / (var(--viewport-max) - var(--viewport-min)));
+	--clamped-progress: clamp(0, var(--progress), 1);
+	result: calc(var(--small) + (var(--large) - var(--small)) * var(--clamped-progress));
+}
