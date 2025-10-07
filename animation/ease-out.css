@@ -1,0 +1,11 @@
+/**
+Creates a simple easing curve value.
+
+@param {Number} --progress - Animation progress (0-1).
+@returns {Number} Eased value.
+@example transform: translateY(--ease-out(var(--progress)));
+*/
+@function --ease-out(--progress) {
+	--inverse: calc(1 - var(--progress));
+	result: calc(1 - var(--inverse) * var(--inverse));
+}
