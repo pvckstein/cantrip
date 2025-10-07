@@ -1,0 +1,13 @@
+/**
+Calculates height from aspect ratio and maximum constraints.
+
+@param {Number} --ratio - Aspect ratio (e.g., 16/9).
+@param {Length} --max-width - Maximum width.
+@param {Length} --max-height - Maximum height.
+@returns {Length} Computed height.
+@example height: --aspect-height(16/9, 100vw, 100vh);
+*/
+@function --aspect-height(--ratio: 1, --max-width: 100%, --max-height: 100%) {
+	--computed-height: calc(var(--max-width) / var(--ratio));
+	result: min(var(--computed-height), var(--max-height));
+}
