@@ -1,0 +1,13 @@
+/**
+Adjusts color lightness.
+
+Uses OKLCH color space for perceptually uniform lightness adjustment. Maintains chroma independently.
+
+@param {Color} --color - The base color.
+@param {Number} --amount - Lightness adjustment (-100% to 100%).
+@returns {Color} Adjusted color.
+@example background: --lighten(blue, 20%);
+*/
+@function --lighten(--color, --amount: 10%) {
+	result: oklch(from var(--color) clamp(0, calc(l + var(--amount) / 100%), 1) c h);
+}
