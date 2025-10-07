@@ -1,0 +1,14 @@
+/**
+Creates responsive grid columns.
+
+@param {Number} --min-width - Minimum column width.
+@param {Number} --max-cols - Maximum number of columns.
+@returns {Grid} Grid template columns value.
+@example grid-template-columns: --auto-grid(250px, 4);
+*/
+@function --auto-grid(--min-width: 250px, --max-cols: 4) {
+	result: repeat(
+		auto-fit,
+		minmax(max(var(--min-width), calc(100% / var(--max-cols))), 1fr)
+	);
+}
