@@ -1,0 +1,12 @@
+/**
+Creates a glow effect.
+
+@param {Color} --color - Glow color.
+@param {Length} --size - Glow size.
+@param {Number} --intensity - Glow intensity (0-1).
+@returns {Shadow} Glow shadow.
+@example box-shadow: --glow(cyan, 10px, 0.5);
+*/
+@function --glow(--color: white, --size: 10px, --intensity: 0.5) {
+	result: 0 0 var(--size) rgb(from var(--color) r g b / var(--intensity));
+}
