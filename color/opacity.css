@@ -1,0 +1,11 @@
+/**
+Returns a semi-transparent version of any color.
+
+@param {Color} --color - The base color.
+@param {Number} --opacity - Opacity value (0-100% or 0-1).
+@returns {Color} Color with opacity.
+@example background: --opacity(blue, 50%);
+*/
+@function --opacity(--color, --opacity) {
+	result: rgb(from var(--color) r g b / var(--opacity));
+}
