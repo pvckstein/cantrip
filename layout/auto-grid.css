@@ -12,3 +12,11 @@ Creates responsive grid columns.
 		minmax(max(var(--min-width), calc(100% / var(--max-cols))), 1fr)
 	);
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: --auto-grid(250px, attr(columns type(<number>)));
+  gap: 1rem;
+}
+
+/* poner en el parent columns="numero" */
