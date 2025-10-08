@@ -1,0 +1,5 @@
+/* background: --gradient(blue, red); */
+
+@function --gradient-right(--color1, --color2) returns type(<image>) {
+  result: linear-gradient(75deg, var(--color1), var(--color2));
+}
