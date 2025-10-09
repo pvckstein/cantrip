@@ -6,7 +6,7 @@ Creates responsive grid columns.
 @returns {Grid} Grid template columns value.
 @example grid-template-columns: --auto-grid(250px, 4);
 */
-@function --auto-grid(--min-width: 250px, --max-cols: 4) {
+@function --auto-grid(--min-width, --max-cols) {
 	result: repeat(
 		auto-fit,
 		minmax(max(var(--min-width), calc(100% / var(--max-cols))), 1fr)
