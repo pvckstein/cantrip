@@ -1,25 +1,27 @@
-@function --auto-grid(--min, --cols, --gap: 1rem) {
-  --per-col: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
-  result: repeat(auto-fit, minmax(min(var(--min), var(--per-col)), 1fr));
+@function --auto-grid(--min-width, --max-cols) { 
+  --calcwidth: calc(100% / var(--max-cols));
+  --calccols: calc(var(--max-cols) - 1);
+  --calcgap: calc(var(--calccols) * 1rem);
+  --calcfinal: calc(var(--calcwidth) - var(--calcgap));
+  result: repeat(auto-fit,minmax(max(var(--min-width), calc(var(--calcfinal) / var(--max-cols))), 1fr)); 
 }
-
 .forum-wrap {
 display: grid;
-    --gap: 1rem;
-  gap: var(--gap);
+gap: 1rem;
+  /*máximo 1 rem*/
 }
 
 .forum-wrap[columns="2"] {
-    grid-template-columns: --auto-grid(350px,2, var(--gap));
+    grid-template-columns: --auto-grid(350px,2);
   }
 
 .forum-wrap[columns="3"] {
   
-  grid-template-columns: --auto-grid(350px, 3, var(--gap));
+  grid-template-columns: --auto-grid(350px, 3);
   }
 
 .forum-wrap[columns="4"] {
-    grid-template-columns: --auto-grid(350px,4, var(--gap));
+    grid-template-columns: --auto-grid(350px,4);
   }
 
 /* poner en category columns="numero" */
