@@ -18,4 +18,12 @@ Creates responsive grid columns.
   grid-template-columns: --auto-grid(250px, attr(columns type(<number>)));
 }
 
+.grid[columns="2"], .grid[columns="4"] {
+	&:last-child:nth-child(odd) {grid-column: 1 / -1;}
+}
+
+.grid[columns="3"] {
+	&:last-child:nth-child(even) {grid-column: 1 / -1;}
+}
+
 /* poner en el parent columns="numero" */
