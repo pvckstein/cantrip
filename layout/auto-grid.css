@@ -16,7 +16,6 @@ Creates responsive grid columns.
 .grid {
   display: grid;
   grid-template-columns: --auto-grid(250px, attr(columns type(<number>)));
-  gap: 1rem;
 }
 
 /* poner en el parent columns="numero" */
