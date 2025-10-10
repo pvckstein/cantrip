@@ -1,13 +1,13 @@
+@function --light-dark(--light, --dark) {
+	result: if(
+		style(--scheme: dark): var(--dark);
+		else: var(--light)
+	);
+}
+
 :root {
-  --bg: #fcfcfc;
+  --bg: --light-dark(red, pink);
   --bg-panel: #ebebeb;
   --color-headings: #9055dd;
   --color-text: #333333;
-}
-
-:root[data-theme="dark"] {
-  --bg: #333333;
-  --bg-panel: #434343;
-  --color-headings: #9e58f9;
-  --color-text: #b5b5b5;
 }
