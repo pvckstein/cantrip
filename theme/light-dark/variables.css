@@ -1,0 +1,13 @@
+:root {
+  --bg: #fcfcfc;
+  --bg-panel: #ebebeb;
+  --color-headings: #9055dd;
+  --color-text: #333333;
+}
+
+:root[data-theme="dark"] {
+  --bg: #333333;
+  --bg-panel: #434343;
+  --color-headings: #9e58f9;
+  --color-text: #b5b5b5;
+}
