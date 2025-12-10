@@ -1,0 +1,98 @@
+footer {
+        color: var(--light);
+        width: 100%;
+    }
+
+    footer .legend {
+        font-size: 0;
+
+        a {
+            font-size: 1rem !important;
+        }
+    }
+
+    #footer_widgets {
+        width: 100%;
+        display: grid;
+        grid-template-columns: max-content repeat(6, 1fr);
+
+        grid-template-areas:
+            "footerlinks online online online online stats stats"
+            "disclaimer disclaimer afiliados afiliados afiliados afiliados afiliados"
+            "creditos creditos creditos creditos creditos creditos creditos";
+
+        .footer-links {
+            grid-area: footerlinks;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        .mod_whoisonline {
+            grid-area: online;
+        }
+
+        .mod_statistics {
+            grid-area: stats;
+            display: grid;
+            grid-template-columns: max-content auto;
+
+            li {
+                font-size: 0;
+
+                strong,
+                span {
+                    font-size: 1rem !important;
+                }
+            }
+        }
+
+        .disclaimer {
+            grid-area: disclaimer;
+            text-align: justify;
+        }
+
+        .afiliados {
+            grid-area: afiliados;
+        }
+
+        .creditos {
+            grid-area: creditos;
+        }
+    }
+
+    .newest-user-username {
+        font-size: 0;
+
+        a {
+            font-size: 2rem;
+            font-family: var(--f-mono);
+            text-transform: lowercase;
+        }
+    }
+
+    .logged-total ul {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            display: flex;
+            gap: .5rem;
+            text-transform: uppercase;
+        }
+    }
+
+    .linklist .rightside {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 0;
+        padding: .75rem;
+        text-transform: uppercase;
+
+        a,
+        .gensmall {
+            font-size: .65rem !important;
+        }
+    }
