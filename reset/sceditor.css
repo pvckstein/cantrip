@@ -1,0 +1,270 @@
+/* ==== QUICK REPLY ==== */
+
+    #quick_reply {
+        margin-top: 3rem;
+
+        #textarea_content {
+            width: 90% !important;
+        }
+
+    }
+
+/* ==== SCEDITOR ==== */
+
+    #contador {
+        background: var(--dark);
+        color: var(--light);
+        padding: .5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        font: .75rem var(--f-mono);
+    }
+
+    .sceditor-container {
+        background: oklch(from var(--light) calc(l + .1) c h) !important;
+        background-clip: padding-box;
+        border: 1px solid var(--dark) !important;
+        border-radius: var(--br) !important;
+        corner-shape: squircle;
+        color: var(--dark) !important;
+        font-family: var(--f-text) !important;
+        font-size: 1rem !important;
+        font-weight: 700;
+        line-height: 1;
+        position: relative;
+    }
+
+    .sceditor-container>textarea {
+        height: 50vh !important;
+        width: 100% !important;
+        padding: 2rem !important;
+        margin: 0 !important;
+        background: oklch(from var(--light) calc(l + .5) c h) !important;
+        border: 0;
+        border-radius: 0 0 var(--br) var(--br) !important;
+        corner-shape: squircle;
+        color: var(--dark) !important;
+        font-family: var(--f-text) !important;
+        font-size: 1rem !important;
+        outline: 0;
+    }
+
+    .sceditor-grip,
+    .sceditor-resize-cover {
+        display: none !important;
+    }
+
+    .sceditor-toolbar {
+        background: var(--c-accent) !important;
+        border-bottom: 0 !important;
+        border-radius: var(--br) var(--br) 0 0 !important;
+        corner-shape: squircle;
+        padding: .5rem !important;
+        height: max-content !important;
+        flex-wrap: wrap !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .sceditor-group {
+        background: transparent !important;
+        border-bottom: 0 !important;
+        border-radius: var(--br) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: .25rem !important;
+
+    }
+
+
+    .sceditor-button {
+        height: 30px !important;
+        width: 30px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        color: var(--c-text-on-accent) !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-indent: 0 !important;
+        transition: all .5s ease-in-out !important;
+
+        &>div {
+            background: transparent !important;
+            position: absolute;
+        }
+
+        &.sceditor-button-mention div,
+        &.sceditor-button-twemojifa div {
+            background: transparent !important;
+        }
+
+        &.sceditor-button-pastetext,
+        &.sceditor-button-more,
+        &.sceditor-button-removeformat {
+            display: none !important;
+        }
+
+        .sceditor-group[style="display: none;"] & {
+            display: none !important;
+        }
+
+        &:hover,
+        &.hover {
+            box-shadow: none !important;
+            background: oklch(from var(--c-accent) calc(l + .2) c h) !important;
+            transition: all .5s ease-in-out;
+        }
+
+        &:before {
+            font: 1rem bootstrap-icons !important;
+        }
+
+        &.sceditor-button-bold:before {
+            content: "\F5F0";
+        }
+
+        &.sceditor-button-italic:before {
+            content: "\F5F4";
+        }
+
+        &.sceditor-button-underline:before {
+            content: "\F5F6";
+        }
+
+        &.sceditor-button-strike:before {
+            content: "\F5F5";
+        }
+
+        &.sceditor-button-left:before {
+            content: "\F5C7";
+        }
+
+        &.sceditor-button-center:before {
+            content: "\F5C4";
+        }
+
+        &.sceditor-button-right:before {
+            content: "\F5C9";
+        }
+
+        &.sceditor-button-justify:before {
+            content: "\F44B";
+        }
+
+        &.sceditor-button-quote:before {
+            content: "\F6B0";
+        }
+
+        &.sceditor-button-code:before {
+            content: "\F2C8";
+        }
+
+        &.sceditor-button-faspoiler:before {
+            content: "\F340";
+        }
+
+        &.sceditor-button-fahide:before {
+            content: "\F8A3";
+        }
+
+        &.sceditor-button-servimg:before {
+            content: "\F2C0";
+        }
+
+        &.sceditor-button-image:before {
+            content: "\F42A";
+        }
+
+        &.sceditor-button-link:before {
+            content: "\F470";
+        }
+
+        &.sceditor-button-embed:before {
+            content: "\F37D";
+        }
+
+        &.sceditor-button-youtube:before {
+            content: "\F21F";
+        }
+
+        &.sceditor-button-headers:before {
+            content: "\F5F1";
+        }
+
+        &.sceditor-button-size:before {
+            content: "\F5F7";
+        }
+
+        &.sceditor-button-color:before {
+            content: "\F4B1";
+        }
+
+        &.sceditor-button-font:before {
+            content: "\F3DA";
+        }
+
+        &.sceditor-button-removeformat:before {
+            content: "";
+        }
+
+        &.sceditor-button-mention:before {
+            content: "\F152";
+        }
+
+        &.sceditor-button-emoticon:before {
+            content: "\F32B";
+        }
+
+        &.sceditor-button-twemojifa:before {
+            content: "\F329";
+        }
+
+        &.sceditor-button-date:before {
+            content: "\F1E4";
+        }
+
+        &.sceditor-button-time:before {
+            content: "\F293";
+        }
+
+        &.sceditor-button-source:before {
+            content: "\F749";
+        }
+
+        &.sceditor-button-bulletlist:before {
+            content: "\F478";
+        }
+
+        &.sceditor-button-orderedlist:before {
+            content: "\F475";
+        }
+
+        &.sceditor-button-horizontalrule:before {
+            content: "\F426";
+        }
+
+        &.sceditor-button-table:before {
+            content: "\F5AA";
+        }
+
+
+    }
+
+    div.sceditor-dropdown {
+        background: var(--c-surface-main) !important;
+        background-clip: padding-box;
+        border: 0 !important;
+        border-radius: var(--br-small) !important;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+        color: var(--c-text-main) !important;
+        line-height: 1;
+        padding: 10px;
+        position: absolute;
+        z-index: 4000;
+    }
