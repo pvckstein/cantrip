@@ -896,10 +896,6 @@ body {
             grid-area: var(--grid-area);
         }
 
-        grid-template-areas: "footerlinks online online loggedbefore loggedbefore stats stats"
-        "disclaimer disclaimer afiliados afiliados afiliados afiliados afiliados"
-        "creditos creditos creditos creditos creditos creditos creditos";
-
         .footer-links {
             --grid-area: footerlinks;
             display: flex;
