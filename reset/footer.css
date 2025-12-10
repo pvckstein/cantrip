@@ -56,7 +56,7 @@ footer {
             text-align: justify;
         }
 
-        .afiliados {
+        #afiliados {
             --grid-area: afiliados;
         }
 
