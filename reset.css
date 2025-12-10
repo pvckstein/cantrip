@@ -435,7 +435,7 @@ body {
             height: var(--img-lastpost-h);
         }
 
-        &.newest-user-avatar {
+        .newest-user & {
             width: var(--img-newestuser-w);
             height: var(--img-newestuser-h);
         }
