@@ -1,3 +1,14 @@
+:root {
+    interpolate-size: allow-keywords;
+    font-size: 1rem;
+}
+
+@media (width < 700px) {
+    :root {
+        font-size: .75rem;
+    }
+}
+
 *,
 *::before,
 *::after {
