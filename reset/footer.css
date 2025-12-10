@@ -16,24 +16,28 @@ footer {
         display: grid;
         grid-template-columns: max-content repeat(6, 1fr);
 
+            & > * {
+                    grid-area: var(--grid-area);
+            }
+
         grid-template-areas:
-            "footerlinks online online online online stats stats"
+            "footerlinks online online loggedbefore loggedbefore stats stats"
             "disclaimer disclaimer afiliados afiliados afiliados afiliados afiliados"
             "creditos creditos creditos creditos creditos creditos creditos";
 
         .footer-links {
-            grid-area: footerlinks;
+            --grid-area: footerlinks;
             display: flex;
             flex-direction: column;
             gap: .5rem;
         }
 
         .mod_whoisonline {
-            grid-area: online;
+            --grid-area: online;
         }
 
         .mod_statistics {
-            grid-area: stats;
+            --grid-area: stats;
             display: grid;
             grid-template-columns: max-content auto;
 
@@ -48,17 +52,21 @@ footer {
         }
 
         .disclaimer {
-            grid-area: disclaimer;
+            --grid-area: disclaimer;
             text-align: justify;
         }
 
         .afiliados {
-            grid-area: afiliados;
+            --grid-area: afiliados;
         }
 
         .creditos {
-            grid-area: creditos;
+            --grid-area: creditos;
         }
+
+            .loggedbefore{ 
+                    --grid-area: loggedbefore;
+            }
     }
 
     .newest-user-username {
