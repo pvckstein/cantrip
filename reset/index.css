@@ -194,33 +194,37 @@ main {
 .forum {
     display: grid;
 
+     & > * {
+            grid-area: var(--grid-area);
+        }
+
     .title {
-        grid-area: title;
+        --grid-area: title;
     }
 
     figure.forum-img:has(img) {
-        grid-area: img;
+        --grid-area: img;
     }
 
     .icon {
-        grid-area: icon;
+        --grid-area: icon;
     }
 
     .description {
-        grid-area: desc;
+        --grid-area: desc;
         text-align: justify;
     }
 
     .links {
-        grid-area: links;
+        --grid-area: links;
     }
 
     .data {
-        grid-area: data;
+        --grid-area: data;
     }
 
     .last-post {
-        grid-area: lastpost;
+        --grid-area: lastpost;
 
         br {
             display: none;
