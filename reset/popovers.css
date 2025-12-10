@@ -1,0 +1,66 @@
+/* DERECHA*/
+[popover]:is([right]) {
+    --transform: translateX(100%);
+    --top: var(--nav-size);
+    --right: 0;
+    --left: auto;
+}
+
+[popover]:is([right]):popover-open {
+    --transform-open: translateX(0);
+}
+
+@starting-style {
+    [popover]:is([right]):popover-open {
+        --transform-enter: translateX(100%);
+    }
+}
+
+/* IZQUIERDA*/
+[popover]:is([left]) {
+    --transform: translateX(-100%);
+    --top: 0;
+    --right: auto;
+    --left: 0;
+}
+
+[popover]:is([left]):popover-open {
+    --transform-open: translateX(0);
+}
+
+@starting-style {
+    [popover]:is([left]):popover-open {
+        --transform-enter: translateX(-100%);
+    }
+}
+
+/* GENERAL */
+[popover] {
+    height: var(--height);
+    width: var(--width);
+    position: fixed;
+    top: var(--top);
+    right: var(--right);
+    left: var(--left);
+    background: var(--c-surface-popovers);
+    border: 1px solid transparent;
+    color: var(--c-text-popovers);
+    padding: var(--spacing-popovers);
+    border-radius: var(--br);
+    corner-shape: var(--shape-popovers);
+    opacity: 0;
+    transform: var(--transform);
+    transition: opacity .7s, transform .7s, overlay .7s allow-discrete, display .7s allow-discrete;
+}
+
+[popover]:popover-open {
+    opacity: 1;
+    transform: var(--transform-open);
+}
+
+@starting-style {
+    [popover]:popover-open {
+        opacity: 0;
+        transform: var(--transform-enter);
+    }
+}
