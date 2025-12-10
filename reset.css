@@ -232,6 +232,7 @@ body {
     &>* {
         grid-area: var(--grid-area);
     }
+}
 
     .last-topics {
         --grid-area: last-topics;
