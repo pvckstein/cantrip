@@ -1,0 +1,24 @@
+/* ==== GRUPOS ==== */
+
+    .group-list {
+
+        .group {
+
+            .group-img {
+                height: 200px;
+                width: 200px;
+                background-image: var(--img-group);
+                background-size: cover;
+                background-position: center;
+            }
+
+            .group-members {
+                font-size: 0;
+
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+    }
