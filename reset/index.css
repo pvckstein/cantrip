@@ -68,9 +68,14 @@ body {
 
 /* ==== TABLON ==== */
 
-.tablon {}
+.tablon {
+    display: grid;
+    & > * {
+        grid-area: var(--grid-area);
+}
 
 .last-topics {
+    --grid-area: last-topics;
     .topic {
         display: flex;
         flex-direction: column;
