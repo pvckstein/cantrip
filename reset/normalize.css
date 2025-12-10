@@ -109,7 +109,7 @@ section {
 
 body {
     line-height: 1;
-    font: 1rem var(--f-text);
+    font: 100% var(--f-text);
 }
 
 ol,
