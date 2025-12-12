@@ -152,7 +152,7 @@ button {
 .signature br,
 .quickreply .h3,
 .quickreply>br,
-img.sprite-tabs_more {
+img.sprite-tabs_more, select option[value="-1"] {
     display: none;
 }
 
